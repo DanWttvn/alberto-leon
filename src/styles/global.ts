@@ -14,7 +14,7 @@ export default createGlobalStyle<ThemeProps>`
 
   html {
     font-size: 16px;
-    background-color: white;
+    background-color: #000;
 
     @media ${({ theme }) => theme.breakpoints.m} {
       font-size: 15.5px;

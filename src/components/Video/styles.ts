@@ -1,11 +1,16 @@
 import styled from 'styled-components'
-import Link from '../Link'
+import RootLink from '../Link'
 
-export default styled(Link)`
+export default styled.div`
   width: 50%;
   @media ${({ theme }) => theme.breakpoints.m} {
     width: 100%
   }
+`
+
+export const Link = styled(RootLink)`
+  position: absolute;
+  inset: 0;
 `
 
 export const StyledPlayer = styled.div`
@@ -17,8 +22,7 @@ export const StyledPlayer = styled.div`
 
   iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
   }
