@@ -5,6 +5,8 @@ import Styled from './styles'
 export interface Props extends BaseProps {
   href: string
   target?: string
+  onMouseOver?: () => void
+  onMouseOut?: () => void
 }
 
 const Link: FC<Props> = ({ children, href, target = '_blank', isHidden, ...props }) => {
