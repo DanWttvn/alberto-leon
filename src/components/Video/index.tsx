@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { BaseProps } from '../../models'
 import Player from '@vimeo/player'
-import Styled from './styles'
+import Styled, { StyledPlayer } from './styles'
 
 interface Props extends BaseProps {
   id: number
@@ -19,8 +19,7 @@ const Video: FC<Props> = ({ id, isHidden, ...props }) => {
       loop: true,
       controls: false,
       muted: true,
-      resposive: true,
-      autoplay: isHovered
+      resposive: true
     }
 
     const player = new Player(ref?.current, options)
@@ -34,7 +33,7 @@ const Video: FC<Props> = ({ id, isHidden, ...props }) => {
 
   return (
     <Styled href={`https://vimeo.com/${id}`} onMouseOver={setIsHovered.bind(undefined, true)} onMouseOut={setIsHovered.bind(undefined, false)} {...props}>
-      <div ref={ref} />
+      <StyledPlayer ref={ref} />
     </Styled>
   )
 }
